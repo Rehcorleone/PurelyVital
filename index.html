@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Natural Vitality</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="description" content="Natural wellness with real results" />
+    <meta property="og:site_name" content="Natural Vitality" />
+    <meta property="og:title" content="Natural Vitality" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Natural wellness with real results" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=DM+Serif+Text&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basic reset */
+        html, body, div, span, h1, h2, h3, p, a, img, ul, li {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        
+        body {
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #f9f9f7;
+        }
+        
+        /* Main container */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+        
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'DM Serif Text', serif;
+            font-weight: normal;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4a8f29;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #3a7320;
+            transform: translateY(-2px);
+        }
+        
+        /* Images */
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 120px 0;
+            background: linear-gradient(135deg, #e3f2e1 0%, #f9f9f7 100%);
+        }
+        
+        /* Product cards */
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .section {
+                padding: 50px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="wrapper">
+            <div class="image" style="margin: 0 auto 30px; max-width: 150px;">
+                <img src="assets/images/logo.png" alt="Natural Vitality" class="img-fluid">
+            </div>
+            <h1>Natural Wellness, Real Results</h1>
+            <p style="max-width: 600px; margin: 0 auto 30px;">Discover science-backed natural formulas for energy, balance, and vitality.</p>
+            <a href="#products" class="btn">Explore Our Products</a>
+        </div>
+    </section>
+    
+    <!-- About -->
+    <section class="section">
+        <div class="wrapper">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2>Our Approach</h2>
+                <p>We combine herbal tradition with scientific research to develop supplements that support your holistic well-being. Our formulas are crafted with high-quality natural ingredients, tested for efficacy.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products -->
+    <section id="products" class="section" style="background: #f5f5f5;">
+        <div class="wrapper">
+            <h2 style="text-align: center; margin-bottom: 50px;">Our Products</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="assets/images/product-energy.jpg" alt="Energy Formula" class="img-fluid">
+                    <div style="padding: 20px;">
+                        <h3>Energy Formula</h3>
+                        <p style="margin-bottom: 20px;">Natural ingredient blend to support healthy energy levels and stamina throughout the day.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="assets/images/product-joints.jpg" alt="Joint Support" class="img-fluid">
+                    <div style="padding: 20px;">
+                        <h3>Joint Support</h3>
+                        <p style="margin-bottom: 20px;">Specialized formula to promote joint mobility and comfort.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="assets/images/product-balance.jpg" alt="Hormonal Balance" class="img-fluid">
+                    <div style="padding: 20px;">
+                        <h3>Hormonal Balance</h3>
+                        <p style="margin-bottom: 20px;">Botanical ingredients traditionally used to support natural hormonal balance.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="wrapper">
+            <h2 style="text-align: center; margin-bottom: 50px;">What Our Customers Say</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <p style="font-style: italic; margin-bottom: 20px;">"After starting the energy supplement, I noticed a difference in my daily stamina. Highly recommend!"</p>
+                    <p style="font-weight: 600;">- Michael C., age 42</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <p style="font-style: italic; margin-bottom: 20px;">"My joints have never felt better. I can get back to my daily walks without discomfort."</p>
+                    <p style="font-weight: 600;">- Sarah L., age 58</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <p style="font-style: italic; margin-bottom: 20px;">"I love that the products are natural and actually work. I feel more balanced and energetic."</p>
+                    <p style="font-weight: 600;">- Jennifer S., age 35</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section" style="background: #4a8f29; color: white; text-align: center;">
+        <div class="wrapper">
+            <h2 style="margin-bottom: 20px;">Ready to Experience the Difference?</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px;">Our products are formulated to naturally support your well-being. Try them and feel the difference.</p>
+            <a href="#" class="btn" style="background: white; color: #4a8f29;">Get Started</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper">
+            <p style="margin-bottom: 20px;">Natural Vitality</p>
+            <p style="margin-bottom: 20px;">info@naturalvitality.com</p>
+            <p>© 2023 Natural Vitality. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
