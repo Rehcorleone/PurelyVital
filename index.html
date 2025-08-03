@@ -1,564 +1,97 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Puraly Vital | Science-Backed Natural Solutions</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Clinically-studied natural supplements for energy, joint health, and holistic wellness">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #2A7F62;
-            --primary-light: #E8F3EF;
-            --secondary: #D4A762;
-            --dark: #1A1A1A;
-            --light: #F9F9F7;
-            --gray: #6D6D6D;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --shadow: 0 8px 30px rgba(42, 127, 98, 0.12);
-            --container-radius: 16px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            line-height: 1.7;
-            background-color: white;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            line-height: 1.2;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 28px 0;
-            background-color: rgba(255,255,255,0.96);
-            z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 160px 0 80px;
-            background: linear-gradient(135deg, rgba(42,127,98,0.03) 0%, rgba(255,255,255,1) 100%);
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 600px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 25px;
-            color: var(--primary);
-            line-height: 1.1;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 35px;
-            color: var(--gray);
-        }
-        
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45%;
-            max-width: 600px;
-            border-radius: var(--container-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 12px solid white;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Button */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 18px 40px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 17px;
-            gap: 12px;
-        }
-        
-        .btn:hover {
-            background-color: #1E5F4A;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(42,127,98,0.25);
-        }
-        
-        .btn-arrow {
-            transition: transform 0.3s ease;
-        }
-        
-        .btn:hover .btn-arrow {
-            transform: translateX(4px);
-        }
-        
-        /* Article Container */
-        .article-container {
-            background: white;
-            border-radius: var(--container-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            margin: 80px 0;
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .article-container:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(42,127,98,0.15);
-        }
-        
-        .article-image {
-            height: 380px;
-            overflow: hidden;
-        }
-        
-        .article-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s ease;
-        }
-        
-        .article-container:hover .article-image img {
-            transform: scale(1.08);
-        }
-        
-        .article-content {
-            padding: 60px;
-        }
-        
-        .article-header {
-            margin-bottom: 35px;
-        }
-        
-        .article-header h3 {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 18px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-        }
-        
-        .article-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .article-content p {
-            margin-bottom: 28px;
-            color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .article-content ul {
-            margin-bottom: 40px;
-            padding-left: 24px;
-        }
-        
-        .article-content li {
-            margin-bottom: 15px;
-            color: var(--gray);
-            position: relative;
-            padding-left: 32px;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        
-        .article-content li:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 16px;
-            height: 16px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-            opacity: 0.2;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 120px 0 80px;
-            text-align: center;
-            background-color: var(--primary);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.06;
-            z-index: 0;
-        }
-        
-        .footer-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-        
-        .footer-content h3 {
-            font-size: 2rem;
-            margin-bottom: 35px;
-            font-weight: 500;
-        }
-        
-        .footer-content p {
-            max-width: 700px;
-            margin: 0 auto 50px;
-            opacity: 0.9;
-            font-size: 1.15rem;
-            line-height: 1.8;
-        }
-        
-        .copyright {
-            margin-top: 80px;
-            font-size: 0.95rem;
-            opacity: 0.7;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3.4rem;
-            }
-            
-            .article-content {
-                padding: 50px 40px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-image {
-                width: 50%;
-                opacity: 0.9;
-            }
-            
-            .article-header h2 {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 28px;
-            }
-            
-            .hero {
-                padding: 140px 0 60px;
-                text-align: center;
-            }
-            
-            .hero h1 {
-                font-size: 2.6rem;
-            }
-            
-            .hero p {
-                font-size: 1.15rem;
-            }
-            
-            .hero-image {
-                position: relative;
-                width: 100%;
-                max-width: 100%;
-                margin-top: 50px;
-                transform: none;
-                opacity: 1;
-                border: 8px solid white;
-            }
-            
-            .article-image {
-                height: 300px;
-            }
-            
-            .article-content {
-                padding: 40px 30px;
-            }
-            
-            .article-header h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            .btn {
-                padding: 16px 32px;
-                font-size: 16px;
-            }
-            
-            .article-content {
-                padding: 35px 25px;
-            }
-            
-            .article-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .footer-content h2 {
-                font-size: 2.2rem;
-            }
-            
-            .footer-content h3 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Purely Vital offers natural, science-backed solutions to fight fatigue and support joint health. Discover your energy again." />
+  <meta property="og:title" content="Purely Vital – Natural Energy & Joint Support" />
+  <meta property="og:description" content="Clinically-backed natural supplements to relieve chronic fatigue, support joints, and restore energy naturally." />
+  <meta property="og:image" content="https://example.com/preview.jpg" />
+  <meta property="og:url" content="https://purelyvital.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Purely Vital – Natural Energy & Joint Relief</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #4caf50;
+      font-size: 1.5rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #4caf50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #388e3c;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #e0e0e0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="#" class="logo">Puraly Vital</a>
-        </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Natural Wellness, Real Results</h1>
-                <p>Driven by curiosity and a deep respect for natural healing, I've spent years exploring how the body thrives through holistic care. This journey led me to discover supplement formulas that genuinely support mental clarity, energy, hormone balance, digestion, immunity, stress relief, weight control, and joint mobility. Now, I share these findings backed by real science and practical results.</p>
-                <a href="#article1" class="btn">
-                    Explore Solutions
-                    <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Natural Wellness">
-            </div>
-        </div>
+  <header>
+    <h1>Purely Vital</h1>
+    <p>Natural Energy Boost & Joint Comfort</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Feel Constantly Drained?</h2>
+      <p>
+        If you're tired of feeling exhausted, struggling to focus, or dragging through the day, you're not alone.
+        Many adults experience chronic fatigue caused by inflammation, stress, and nutrient deficiencies.
+      </p>
+      <a href="[ENERGY_PRODUCT_LINK]" class="cta-button">Try Vitalis Renew Risk-Free</a>
     </section>
-    
-    <!-- Article 1: Energy -->
-    <div class="container">
-        <div id="article1" class="article-container">
-            <div class="article-image">
-                <img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Woman experiencing fatigue and low energy">
-            </div>
-            <div class="article-content">
-                <div class="article-header">
-                    <h3>Energy & Vitality</h3>
-                    <h2>When Fatigue Won't Go Away</h2>
-                </div>
-                <p>Find out why your energy feels drained. And how a natural approach could help you regain balance and vitality over time.</p>
-                <p>You know that feeling when you wake up already tired, like the night's rest just wasn't enough? Or when the day has barely started and you feel like you're running on empty — no energy for your workout, your work, or even the small everyday things?</p>
-                
-                <h4 style="margin: 40px 0 25px; color: var(--primary); font-size: 1.5rem;">What might help?</h4>
-                <p>Some natural ingredients have been studied for their potential to gently support energy, balance, and well-being:</p>
-                <ul>
-                    <li><strong>L-Arginine:</strong> Supports better circulation which can boost both physical and mental energy</li>
-                    <li><strong>Tongkat Ali:</strong> Traditionally used to support male vitality and hormonal balance</li>
-                    <li><strong>Maca Root:</strong> Known for promoting natural energy and a healthy libido without sudden highs and crashes</li>
-                    <li><strong>Ashwagandha:</strong> Helps the body adapt to stress, bringing more clarity and calm</li>
-                    <li><strong>Horny Goat Weed:</strong> Supports circulation and physical performance in a natural way</li>
-                </ul>
-                <p>When combined thoughtfully, these ingredients can offer real support in a gentle, gradual way that respects your body's rhythm.</p>
-                <a href="[ENERGY_PRODUCT_LINK]" class="btn">
-                    See what's working for others
-                    <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Article 2: Joints -->
-    <div class="container">
-        <div id="article2" class="article-container">
-            <div class="article-image">
-                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Senior man massaging his knee joint">
-            </div>
-            <div class="article-content">
-                <div class="article-header">
-                    <h3>Joint Health</h3>
-                    <h2>Achy Joints?</h2>
-                </div>
-                <p>Waking up with stiff joints, feeling pain when walking, or discomfort when climbing stairs might seem normal with aging — but these are signs your body needs support.</p>
-                <p>As we age, joints lose lubrication, cartilage wears down, and inflammation increases. This leads to pain, reduced mobility, and that constant feeling of tightness.</p>
-                
-                <h4 style="margin: 40px 0 25px; color: var(--primary); font-size: 1.5rem;">Natural solutions that work:</h4>
-                <ul>
-                    <li><strong>Hyaluronic acid (Mobilee®):</strong> A substance naturally produced by the body that decreases over time. Supplementing can help restore joint lubrication</li>
-                    <li><strong>Boswellia Serrata:</strong> A traditional herbal remedy known for powerful anti-inflammatory properties that helps reduce swelling naturally</li>
-                    <li><strong>Ginger:</strong> A natural anti-inflammatory that also improves circulation and relieves pain</li>
-                    <li><strong>French maritime pine bark:</strong> Rich in antioxidants that help protect joints from oxidative damage</li>
-                    <li><strong>Piperine:</strong> Extracted from black pepper to boost absorption of other nutrients</li>
-                </ul>
-                <p>The good news? There are natural supplements that combine these ingredients in safe, balanced formulas.</p>
-                <a href="[JOINT_PRODUCT_LINK]" class="btn">
-                    Discover natural joint support
-                    <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Article 3: Hearing -->
-    <div class="container">
-        <div id="article3" class="article-container">
-            <div class="article-image">
-                <img src="https://images.unsplash.com/photo-1515992854631-13de0ba9e8e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Senior woman touching her ear gently">
-            </div>
-            <div class="article-content">
-                <div class="article-header">
-                    <h3>Hearing Health</h3>
-                    <h2>Your ears deserve the best</h2>
-                </div>
-                <p>Hearing issues often sneak up on us. One day you're asking people to repeat themselves, the next you're avoiding social events because conversations become exhausting.</p>
-                <p>Natural, science-backed ingredients can support both ear and brain health when used consistently:</p>
-                <ul>
-                    <li><strong>Maca Root:</strong> Enhances energy and supports overall vitality which may benefit circulation</li>
-                    <li><strong>Grape Seed Extract:</strong> Rich in antioxidants that help fight free radicals protecting sensitive ear cells</li>
-                    <li><strong>Green Tea:</strong> Promotes better blood flow critical for nourishing the auditory system</li>
-                    <li><strong>Capsicum Annuum (Cayenne):</strong> Supports healthy inflammation responses in the inner ear</li>
-                    <li><strong>GABA:</strong> A natural neurotransmitter that supports relaxation and may ease tinnitus-related anxiety</li>
-                </ul>
-                <p>While these nutrients can be found in food, getting the right daily dose in proper combinations can be challenging.</p>
-                <a href="[HEARING_PRODUCT_LINK]" class="btn">
-                    Learn about hearing support
-                    <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h2>Rooted in intention</h2>
-                <h3>A Return to What Matters</h3>
-                <p>We believe in a life with more clarity, lightness, and vitality. No magic formulas, no empty promises. Just science, nature, and integrity in everything we do. Here, you'll find more than supplements — you'll find a path back to what matters most: taking care of yourself with presence, respect, and awareness.</p>
-                <p class="copyright">© 2023 Puraly Vital. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 8px 20px rgba(0,0,0,0.08)';
-                header.style.padding = '18px 0';
-                header.style.background = 'rgba(255,255,255,0.98)';
-            } else {
-                header.style.boxShadow = 'none';
-                header.style.padding = '28px 0';
-                header.style.background = 'rgba(255,255,255,0.96)';
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    </script>
+
+    <section>
+      <h2>Struggling With Joint Pain?</h2>
+      <p>
+        Achy knees, stiff hips, or painful hands might signal joint inflammation and lack of lubrication. Our
+        natural formula helps reduce pain and improve flexibility.
+      </p>
+      <a href="[JOINT_PRODUCT_LINK]" class="cta-button">Try Joint Genesis™ Now</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Purely Vital. All rights reserved.
+  </footer>
 </body>
 </html>
