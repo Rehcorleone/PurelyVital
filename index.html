@@ -2,24 +2,26 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>Puraly Vital | Natural Wellness Solutions</title>
+    <title>Puraly Vital | Premium Natural Wellness</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Science-backed natural supplements for energy, joint health, and holistic wellness">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary: #2A7F62;
             --primary-light: #E8F3EF;
-            --secondary: #F5A623;
+            --secondary: #D4A762;
             --dark: #1A1A1A;
             --light: #F9F9F7;
             --gray: #6D6D6D;
-            --transition: all 0.3s ease;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --container-radius: 12px;
         }
         
         * {
@@ -31,20 +33,21 @@
         body {
             font-family: 'Inter', sans-serif;
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.7;
             background-color: white;
             overflow-x: hidden;
         }
         
-        h1, h2, h3 {
-            font-family: 'DM Serif Display', serif;
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
             line-height: 1.2;
-            font-weight: normal;
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
         
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -57,8 +60,9 @@
             width: 100%;
             padding: 25px 0;
             background-color: white;
-            z-index: 100;
+            z-index: 1000;
             transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
         .header-container {
@@ -68,10 +72,12 @@
         }
         
         .logo {
-            font-size: 24px;
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 700;
             color: var(--primary);
             text-decoration: none;
+            letter-spacing: -1px;
         }
         
         /* Hero Section */
@@ -79,29 +85,54 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 0 80px;
-            background-color: var(--primary-light);
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, rgba(42,127,98,0.03) 0%, rgba(255,255,255,1) 100%);
+            position: relative;
         }
         
         .hero-content {
             max-width: 600px;
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
             color: var(--primary);
+            line-height: 1.1;
         }
         
         .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
+            margin-bottom: 35px;
             color: var(--gray);
         }
         
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 600px;
+            border-radius: var(--container-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            opacity: 0.95;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Button */
         .btn {
-            display: inline-block;
-            padding: 14px 32px;
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 36px;
             background-color: var(--primary);
             color: white;
             text-decoration: none;
@@ -111,21 +142,56 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
+            gap: 10px;
         }
         
         .btn:hover {
             background-color: #1E5F4A;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(42,127,98,0.2);
         }
         
-        /* Article Sections */
-        .article-section {
-            padding: 80px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        .btn-arrow {
+            transition: transform 0.3s ease;
         }
         
-        .article-section:nth-child(even) {
-            background-color: var(--primary-light);
+        .btn:hover .btn-arrow {
+            transform: translateX(3px);
+        }
+        
+        /* Article Container */
+        .article-container {
+            background: white;
+            border-radius: var(--container-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin: 60px 0;
+            transition: var(--transition);
+        }
+        
+        .article-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .article-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .article-container:hover .article-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 50px;
         }
         
         .article-header {
@@ -137,61 +203,154 @@
             color: var(--secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
         }
         
         .article-header h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 15px;
         }
         
         .article-content p {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--gray);
+            font-size: 1.05rem;
         }
         
         .article-content ul {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             padding-left: 20px;
         }
         
         .article-content li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--gray);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .article-content li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.3;
         }
         
         /* Footer */
         footer {
-            padding: 80px 0;
+            padding: 100px 0 60px;
             text-align: center;
             background-color: var(--primary);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            z-index: 0;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
         }
         
         .footer-content h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
         }
         
+        .footer-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
         .footer-content p {
-            max-width: 600px;
-            margin: 0 auto 30px;
+            max-width: 700px;
+            margin: 0 auto 40px;
             opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .copyright {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
         
         /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-image {
+                width: 50%;
+                opacity: 0.8;
+            }
+        }
+        
         @media (max-width: 768px) {
+            .logo {
+                font-size: 24px;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                margin-top: 40px;
+                transform: none;
+                opacity: 1;
+            }
+            
+            .article-content {
+                padding: 40px 30px;
+            }
+            
+            .article-header h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
             .hero h1 {
                 font-size: 2.2rem;
             }
             
-            .article-header h2 {
-                font-size: 1.8rem;
+            .btn {
+                padding: 14px 28px;
             }
             
-            .article-section {
-                padding: 60px 0;
+            .article-content {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -210,24 +369,34 @@
             <div class="hero-content">
                 <h1>Natural Wellness, Real Results</h1>
                 <p>Driven by curiosity and a deep respect for natural healing, I've spent years exploring how the body thrives through holistic care. This journey led me to discover supplement formulas that genuinely support mental clarity, energy, hormone balance, digestion, immunity, stress relief, weight control, and joint mobility. Now, I share these findings backed by real science and practical results.</p>
-                <a href="#article1" class="btn">Explore Solutions</a>
+                <a href="#article1" class="btn">
+                    Explore Solutions
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Natural Wellness">
             </div>
         </div>
     </section>
     
     <!-- Article 1 -->
-    <section id="article1" class="article-section">
-        <div class="container">
-            <div class="article-header">
-                <h3>Energy & Vitality</h3>
-                <h2>When Fatigue Won't Go Away</h2>
+    <div class="container">
+        <div id="article1" class="article-container">
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Energy and Vitality">
             </div>
             <div class="article-content">
+                <div class="article-header">
+                    <h3>Energy & Vitality</h3>
+                    <h2>When Fatigue Won't Go Away</h2>
+                </div>
                 <p>Find out why your energy feels drained. And how a natural approach could help you regain balance and vitality over time.</p>
                 <p>You know that feeling when you wake up already tired, like the night's rest just wasn't enough? Or when the day has barely started and you feel like you're running on empty — no energy for your workout, your work, or even the small everyday things?</p>
-                <p>This is more common than it seems, especially after 30 or when life gets more demanding. While it's easy to call it "just adulthood," your body has its quiet ways of asking for support.</p>
                 
-                <h4 style="font-family: 'Inter', sans-serif; font-weight: 600; margin: 30px 0 15px; color: var(--primary);">What might help?</h4>
+                <h4 style="margin: 35px 0 20px; color: var(--primary);">What might help?</h4>
                 <p>Some natural ingredients have been studied for their potential to gently support energy, balance, and well-being:</p>
                 <ul>
                     <li><strong>L-Arginine:</strong> Supports better circulation</li>
@@ -237,23 +406,31 @@
                     <li><strong>Horny Goat Weed:</strong> Supports circulation</li>
                 </ul>
                 <p>When combined thoughtfully, these ingredients can offer real support in a gentle, gradual way that respects your body's rhythm.</p>
-                <a href="[LINK_TO_PRODUCT]" class="btn">Curious what's been working for others?</a>
+                <a href="[LINK_TO_PRODUCT]" class="btn">
+                    See what's working for others
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
     
     <!-- Article 2 -->
-    <section id="article2" class="article-section">
-        <div class="container">
-            <div class="article-header">
-                <h3>Joint Health</h3>
-                <h2>Achy Joints?</h2>
+    <div class="container">
+        <div id="article2" class="article-container">
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Joint Health">
             </div>
             <div class="article-content">
+                <div class="article-header">
+                    <h3>Joint Health</h3>
+                    <h2>Achy Joints?</h2>
+                </div>
                 <p>Waking up with stiff joints, feeling pain when walking, or discomfort when climbing stairs might seem normal with aging — but these are signs your body needs support.</p>
                 <p>As we age, joints lose lubrication, cartilage wears down, and inflammation increases. This leads to pain, reduced mobility, and that constant feeling of tightness.</p>
                 
-                <h4 style="font-family: 'Inter', sans-serif; font-weight: 600; margin: 30px 0 15px; color: var(--primary);">Natural solutions that work:</h4>
+                <h4 style="margin: 35px 0 20px; color: var(--primary);">Natural solutions that work:</h4>
                 <ul>
                     <li><strong>Hyaluronic acid:</strong> Restores joint lubrication</li>
                     <li><strong>Boswellia Serrata:</strong> Reduces swelling naturally</li>
@@ -262,19 +439,27 @@
                     <li><strong>Piperine:</strong> Boosts nutrient absorption</li>
                 </ul>
                 <p>The good news? There are natural supplements that combine these ingredients in safe, balanced formulas.</p>
-                <a href="[LINK_TO_PRODUCT]" class="btn">Take a look at what's helping others</a>
+                <a href="[LINK_TO_PRODUCT]" class="btn">
+                    Discover natural joint support
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
     
     <!-- Article 3 -->
-    <section id="article3" class="article-section">
-        <div class="container">
-            <div class="article-header">
-                <h3>Hearing Health</h3>
-                <h2>Your ears deserve the best</h2>
+    <div class="container">
+        <div id="article3" class="article-container">
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hearing Health">
             </div>
             <div class="article-content">
+                <div class="article-header">
+                    <h3>Hearing Health</h3>
+                    <h2>Your ears deserve the best</h2>
+                </div>
                 <p>Hearing issues often sneak up on us. One day you're asking people to repeat themselves, the next you're avoiding social events because conversations become exhausting.</p>
                 <p>Natural, science-backed ingredients can support both ear and brain health when used consistently:</p>
                 <ul>
@@ -285,29 +470,34 @@
                     <li><strong>GABA:</strong> Supports relaxation</li>
                 </ul>
                 <p>While these nutrients can be found in food, getting the right daily dose in proper combinations can be challenging.</p>
-                <a href="[LINK_TO_PRODUCT]" class="btn">Learn more about natural hearing support</a>
+                <a href="[LINK_TO_PRODUCT]" class="btn">
+                    Learn about hearing support
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
     
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <h2>Rooted in intention</h2>
-                <h3 style="font-family: 'DM Serif Display'; font-size: 1.8rem; margin-bottom: 20px;">A Return to What Matters</h3>
+                <h3>A Return to What Matters</h3>
                 <p>We believe in a life with more clarity, lightness, and vitality. No magic formulas, no empty promises. Just science, nature, and integrity in everything we do. Here, you'll find more than supplements — you'll find a path back to what matters most.</p>
-                <p style="margin-top: 50px; font-size: 0.9rem; opacity: 0.7;">© 2023 Puraly Vital. All rights reserved.</p>
+                <p class="copyright">© 2023 Puraly Vital. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
     <script>
-        // Simple header scroll effect
+        // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
                 header.style.padding = '15px 0';
             } else {
                 header.style.boxShadow = 'none';
@@ -320,7 +510,8 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             });
         });
