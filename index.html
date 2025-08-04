@@ -1,532 +1,175 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Puraly Vital | Premium Natural Wellness</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Science-backed natural supplements for energy, joint health, and hearing support">
-    
-    <!-- Fonts -->
+    <title>Purely Vital - Natural Wellness Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2A7F62;
-            --primary-light: #E8F3EF;
-            --secondary: #D4A762;
-            --dark: #1A1A1A;
-            --light: #F9F9F7;
-            --gray: #6D6D6D;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --shadow: 0 8px 30px rgba(0,0,0,0.1);
-            --container-radius: 16px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            line-height: 1.8;
-            background-color: var(--light);
-            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
         }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            line-height: 1.2;
-            font-weight: 600;
-            letter-spacing: -0.5px;
+        .title-font {
+            font-family: 'Playfair Display', serif;
         }
-        
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
+        .article-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 0;
-            background-color: white;
-            z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .bg-avocado {
+            background-color: #568203;
         }
-        
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: -1px;
+        .text-avocado {
+            color: #568203;
         }
-        
-        nav ul {
-            display: flex;
-            gap: 24px;
-            list-style: none;
+        .bg-babyblue {
+            background-color: #B0E0E6;
         }
-        
-        nav a {
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        nav a:hover {
-            color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 90vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: 140px 0 100px;
-            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(255,255,255,1) 100%);
-            gap: 40px;
-        }
-        
-        .hero-content {
-            max-width: 700px;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            color: var(--primary);
-            line-height: 1.1;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 40px;
-            color: var(--gray);
-        }
-        
-        .hero-image {
-            border-radius: var(--container-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-        
-        /* Button */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 18px 40px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            gap: 12px;
-        }
-        
-        .btn:hover {
-            background-color: #1E5F4A;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(42,127,98,0.25);
-        }
-        
-        .btn-arrow {
-            transition: transform 0.3s ease;
-        }
-        
-        .btn:hover .btn-arrow {
-            transform: translateX(4px);
-        }
-        
-        /* Articles Section */
-        .articles-section {
-            padding: 100px 0;
-            background-color: var(--light);
-        }
-        
-        .articles-section h2 {
-            font-size: 3rem;
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
-        }
-        
-        .article-container {
-            background: white;
-            border-radius: var(--container-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        
-        .article-container:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        
-        .article-image {
-            height: 280px;
-            overflow: hidden;
-        }
-        
-        .article-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .article-container:hover .article-image img {
-            transform: scale(1.05);
-        }
-        
-        .article-content {
-            padding: 40px;
-        }
-        
-        .article-header {
-            margin-bottom: 30px;
-        }
-        
-        .article-header h3 {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .article-header h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .article-content p {
-            margin-bottom: 25px;
-            color: var(--gray);
-            font-size: 1.05rem;
-        }
-        
-        .article-content ul {
-            margin-bottom: 30px;
-            padding-left: 25px;
-        }
-        
-        .article-content li {
-            margin-bottom: 15px;
-            color: var(--gray);
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .article-content li:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 10px;
-            height: 10px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-            opacity: 0.4;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 120px 0 60px;
-            text-align: center;
-            background-color: var(--primary);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: 0;
-        }
-        
-        .footer-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-content h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .footer-content h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        
-        .footer-content p {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-            font-size: 1.15rem;
-        }
-        
-        .copyright {
-            margin-top: 80px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding: 120px 0 80px;
-            }
-            
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-            
-            .hero-image {
-                margin-top: 40px;
-            }
-            
-            .hero-image img {
-                height: 400px;
-            }
-            
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 28px;
-            }
-            
-            nav ul {
-                gap: 16px;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .articles-section h2 {
-                font-size: 2.5rem;
-            }
-            
-            .article-content {
-                padding: 30px;
-            }
-            
-            .article-header h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            .btn {
-                padding: 14px 32px;
-            }
-            
-            .article-content {
-                padding: 24px;
-            }
-            
-            .article-image {
-                height: 220px;
-            }
+        .text-babyblue {
+            color: #B0E0E6;
         }
     </style>
 </head>
-<body>
+<body class="bg-[#f8f8f8]">
     <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="#" class="logo">Puraly Vital</a>
-            <nav>
-                <ul>
-                    <li><a href="#energy">Energy</a></li>
-                    <li><a href="#joint">Joint Health</a></li>
-                    <li><a href="#hearing">Hearing</a></li>
-                    <li><a href="#footer">About</a></li>
-                </ul>
-            </nav>
+    <header class="bg-white shadow-sm py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="title-font text-3xl md:text-4xl font-semibold text-avocado">Purely Vital</h1>
+                    <span class="ml-2 text-xs bg-avocado text-white px-2 py-1 rounded-full">NATURAL</span>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#" class="hover:text-babyblue transition">Home</a></li>
+                        <li><a href="#" class="hover:text-babyblue transition">Articles</a></li>
+                        <li><a href="#" class="hover:text-babyblue transition">Products</a></li>
+                        <li><a href="#" class="hover:text-babyblue transition">About</a></li>
+                    </ul>
+                </nav>
+                <button class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Rediscover Your Natural Vitality</h1>
-                <p>At Puraly Vital, we believe wellness starts with nature. Our science-backed supplements harness the power of natural ingredients to support energy, joint health, and hearing, helping you live with clarity and confidence.</p>
-                <a href="#energy" class="btn">
-                    Explore Our Solutions
-                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1628779238951-be6c9f2f2032?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Natural Ingredients">
+    <section class="relative py-20 bg-gradient-to-r from-green-50 to-blue-50 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center mix-blend-multiply"></div>
+        </div>
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-2xl mx-auto text-center">
+                <span class="inline-block mb-4 text-sm font-medium text-avocado bg-white/80 px-4 py-1 rounded-full">100% NATURAL INGREDIENTS</span>
+                <h2 class="title-font text-4xl md:text-5xl font-semibold text-gray-800 mb-6 leading-tight">Natural Wellness <span class="text-avocado">Real Results</span></h2>
+                <p class="text-lg text-gray-600 mb-8">Our scientifically-formulated supplements combine nature's wisdom with modern research to support your health journey. Experience the difference of premium ingredients carefully selected for purity and potency.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="inline-block bg-avocado hover:bg-green-700 text-white font-medium py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl">Shop Now</a>
+                    <a href="#" class="inline-block border-2 border-avocado text-avocado hover:bg-avocado hover:text-white font-medium py-3 px-8 rounded-full transition duration-300">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Articles Section -->
-    <section class="articles-section">
-        <div class="container">
-            <h2>Solutions for a Healthier You</h2>
-            <div class="articles-grid">
-                <!-- Article 1: Energy & Vitality -->
-                <div id="energy" class="article-container">
-                    <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Person struggling with fatigue">
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Article 1 -->
+            <div class="article-card bg-white rounded-xl shadow-xl overflow-hidden mb-12 relative group">
+                <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="md:flex relative">
+                    <div class="md:w-1/3 relative">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tired woman resting" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-avocado to-babyblue"></div>
                     </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <h3>Energy & Vitality</h3>
-                            <h2>Breaking Free from Chronic Fatigue</h2>
+                    <div class="p-8 md:w-2/3">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 rounded-full bg-avocado mr-2"></div>
+                            <span class="uppercase tracking-wide text-xs text-avocado font-semibold">Energy & Vitality</span>
                         </div>
-                        <p>Feeling drained every day isn’t normal—it’s a sign your body is crying for help. Chronic fatigue affects over 20% of Americans, leading to decreased productivity, mood swings, and weakened immunity. It can make simple tasks like getting out of bed or focusing at work feel insurmountable.</p>
-                        <p>The causes are complex. Poor diet, especially low intake of B-vitamins and iron, can starve your cells of energy. Chronic stress elevates cortisol, disrupting sleep and metabolism. Poor blood flow limits oxygen delivery, while hormonal imbalances, like low testosterone or thyroid issues, sap vitality. Over time, these factors create a vicious cycle, leaving you exhausted and unmotivated.</p>
-                        <p>Ignoring fatigue can lead to serious consequences: weakened immune response, increased risk of depression, and even cardiovascular strain. The good news? Nature offers solutions that work with your body to restore energy sustainably.</p>
-                        <h4 style="margin: 35px 0 20px; color: var(--primary);">Natural Ingredients to Recharge</h4>
-                        <p>These science-backed ingredients can help address the root causes of fatigue:</p>
-                        <ul>
-                            <li><strong>L-Arginine:</strong> Boosts nitric oxide production, improving blood flow and oxygen delivery to cells, which supports sustained energy.</li>
-                            <li><strong>Tongkat Ali:</strong> Used for centuries in Southeast Asia, it supports testosterone levels and stamina, particularly in men.</li>
-                            <li><strong>Maca Root:</strong> A Peruvian adaptogen that enhances energy, balances hormones, and improves endurance without stimulants.</li>
-                            <li><strong>Ashwagandha:</strong> Reduces cortisol levels, helping your body manage stress and improve sleep quality.</li>
-                            <li><strong>Rhodiola Rosea:</strong> Enhances mental and physical resilience, reducing fatigue during stressful periods.</li>
-                            <li><strong>Coenzyme Q10:</strong> Supports mitochondrial function, the powerhouse of your cells, for better energy production.</li>
-                        </ul>
-                        <p>By combining these ingredients in precise doses, you can support your body’s natural energy systems without relying on caffeine or sugar. Puraly Vital’s Energy Boost Formula is crafted to deliver these nutrients in a balanced blend, helping you feel vibrant and focused throughout the day.</p>
-                        <a href="https://puralyvital.com/energy-boost" class="btn">
-                            Find Your Energy Again
-                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4 leading-snug">When fatigue won't go away</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">Discover why your energy drains and how a natural approach can help you regain balance and vitality over time.</h4>
+                        <p class="text-gray-600 mb-4">You know that feeling of waking up tired, as if the night's sleep wasn't enough? Or when the day has barely started and you already feel drained — no energy for workouts, work, or even the small daily tasks? This is more common than it seems, especially after 30 or when life gets more challenging.</p>
+                        <p class="text-gray-600 mb-6">These symptoms are often related to hormonal imbalances, slow circulation, chronic stress, or mild inflammation that builds up over time. Some natural ingredients have been studied for their potential to gently promote energy, balance, and well-being.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 Want to know what's worked for others? Take a closer look</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </a>
                     </div>
                 </div>
-                
-                <!-- Article 2: Joint Health -->
-                <div id="joint" class="article-container">
-                    <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1574680178050-55c6b01ce8a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Person with joint pain">
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/3">
+                        <img src="https://images.pexels.com/photos/11349880/pexels-photo-11349880.jpeg?_gl=1*16456uv*_ga*MTY3MjgzMDY3MS4xNzUzOTgzNjg5*_ga_8JE65Q40S6*czE3NTQzMzc2ODQkbzkkZzEkdDE3NTQzMzgzNjYkajQ3JGwwJGgw" alt="Senior woman holding her knee" class="w-full h-full object-cover">
                     </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <h3>Joint Health</h3>
-                            <h2>Why Your Joints Hurt and How to Ease the Pain</h2>
-                        </div>
-                        <p>Joint pain affects over 50 million Americans, often starting as morning stiffness or discomfort during movement. It’s not just aging—repetitive stress, poor diet, or inflammation can erode cartilage, reduce joint lubrication, and cause swelling. This can limit mobility, disrupt sleep, and diminish your quality of life.</p>
-                        <p>The trouble often begins with cartilage breakdown, as collagen production slows with age. Inflammatory foods like sugar or processed oils trigger cytokines, worsening swelling. Sedentary lifestyles or repetitive motions, like typing or running, stress joints further. Left unchecked, joint issues can lead to chronic pain, reduced independence, or even the need for invasive treatments.</p>
-                        <p>Addressing joint health early can prevent long-term damage and restore comfort. Natural ingredients offer a gentle, effective way to support your joints.</p>
-                        <h4 style="margin: 35px 0 20px; color: var(--primary);">Natural Support for Joint Health</h4>
-                        <p>These ingredients target the root causes of joint discomfort:</p>
-                        <ul>
-                            <li><strong>Hyaluronic Acid:</strong> Restores synovial fluid, cushioning joints and reducing friction during movement.</li>
-                            <li><strong>Boswellia Serrata:</strong> Inhibits inflammatory pathways, reducing swelling and pain in joints.</li>
-                            <li><strong>Turmeric (Curcumin):</strong> A powerful anti-inflammatory that targets joint pain and supports tissue repair.</li>
-                            <li><strong>Collagen Type II:</strong> Rebuilds cartilage, improving joint flexibility and strength.</li>
-                            <li><strong>MSM (Methylsulfonylmethane):</strong> Provides sulfur to strengthen connective tissues and reduce stiffness.</li>
-                            <li><strong>Glucosamine:</strong> Supports cartilage repair and maintains joint structure.</li>
-                        </ul>
-                        <p>These ingredients work synergistically to reduce inflammation, improve lubrication, and support tissue repair. Puraly Vital’s Joint Ease Formula combines them in a carefully balanced blend, offering a natural way to move freely and comfortably.</p>
-                        <a href="https://puralyvital.com/joint-ease" class="btn">
-                            Ease Your Joint Discomfort
-                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-avocado font-semibold mb-1">Joint Health</div>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Joint pain?</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">Suffering with joint discomfort? See how to find relief naturally</h4>
+                        <p class="text-gray-600 mb-4">If you suffer from joint pain and stiffness, you know how frustrating it can feel to be limited in your daily activities. Whether it's climbing stairs, walking, or even getting out of bed, joint discomfort can make simple tasks daunting.</p>
+                        <p class="text-gray-600 mb-6">To relieve joint discomfort, focus on reducing inflammation, promoting cartilage health, and improving flexibility. Here are key ingredients that can help, supported by their natural properties.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 Discover Feilaira's Natural Joint Support Formula</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </a>
                     </div>
                 </div>
-                
-                <!-- Article 3: Hearing Health -->
-                <div id="hearing" class="article-container">
-                    <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c6b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Person struggling to hear">
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="https://images.pexels.com/photos/7792840/pexels-photo-7792840.jpeg?_gl=1*1t1al54*_ga*MTY3MjgzMDY3MS4xNzUzOTgzNjg5*_ga_8JE65Q40S6*czE3NTQzMzc2ODQkbzkkZzEkdDE3NTQzMzkyNDkkajMxJGwwJGgw" alt="Woman touching her ear" class="w-full h-full object-cover">
                     </div>
-                    <div class="article-content">
-                        <div class="article-header">
-                            <h3>Hearing Health</h3>
-                            <h2>Protecting Your Hearing from Decline</h2>
-                        </div>
-                        <p>Hearing loss affects over 48 million Americans, often starting with difficulty hearing conversations or needing to turn up the volume. It’s not just age—noise exposure, poor circulation, or oxidative stress can damage the cochlea and auditory nerves, leading to social isolation, cognitive strain, and even increased dementia risk.</p>
-                        <p>The process begins when hair cells in the inner ear are damaged by loud noises, poor diet, or aging. Reduced blood flow to the ears limits nutrient delivery, while oxidative stress from free radicals harms delicate structures. Chronic inflammation can also impair the brain’s ability to process sound, making conversations harder to follow.</p>
-                        <p>Protecting your hearing early can preserve your connection to the world. Natural ingredients can support ear health and cognitive function, helping you stay engaged.</p>
-                        <h4 style="margin: 35px 0 20px; color: var(--primary);">Natural Support for Hearing</h4>
-                        <p>These ingredients promote ear and brain health:</p>
-                        <ul>
-                            <li><strong>Ginkgo Biloba:</strong> Enhances microcirculation in the ears, supporting auditory function and clarity.</li>
-                            <li><strong>Grape Seed Extract:</strong> Rich in antioxidants, it protects ear cells from oxidative damage.</li>
-                            <li><strong>Coenzyme Q10:</strong> Supports cellular energy in the auditory system, aiding nerve function.</li>
-                            <li><strong>Alpha Lipoic Acid:</strong> Reduces oxidative stress and supports nerve health in the auditory pathway.</li>
-                            <li><strong>Zinc:</strong> Essential for maintaining healthy auditory nerve function and immune support.</li>
-                            <li><strong>Magnesium:</strong> Protects against noise-induced hearing loss and supports nerve signaling.</li>
-                        </ul>
-                        <p>These nutrients, when combined thoughtfully, can help protect your hearing and support cognitive clarity. Puraly Vital’s Hearing Clarity Formula blends these ingredients to offer a natural way to stay connected to the sounds that matter most.</p>
-                        <a href="https://puralyvital.com/hearing-clarity" class="btn">
-                            Protect Your Hearing Naturally
-                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-avocado font-semibold mb-1">Hearing Health</div>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Your ears deserve the best</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">How to care for your hearing naturally before it's too late</h4>
+                        <p class="text-gray-600 mb-4">Let's be honest: hearing problems catch us by surprise. One day, you're asking people to repeat themselves more often. The next, you're avoiding social events because conversations have become exhausting.</p>
+                        <p class="text-gray-600 mb-6">There are scientifically-backed natural ingredients that contribute to ear and brain health when used consistently. After years of researching natural solutions for hearing support, I discovered a formula that brings together many of the best-studied ingredients in this area.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 Learn more about Audifort here, if you're interested</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="article-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Man holding his knee in pain" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-avocado font-semibold mb-1">Joint Support</div>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Joint pain?</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">Hidden causes and natural solutions that really work</h4>
+                        <p class="text-gray-600 mb-4">Waking up with stiff joints, feeling pain when walking, or discomfort when climbing stairs might seem like a normal part of aging, but these are signs your body is asking for support.</p>
+                        <p class="text-gray-600 mb-6">Fortunately, certain natural compounds have been studied for their ability to promote joint health. The good news is there are already natural supplements that safely and balancedly combine all these ingredients, offering a smarter, gentler approach to joint discomfort.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 See what's helped others with similar symptoms</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </a>
                     </div>
@@ -534,48 +177,381 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Featured Products -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block mb-4 text-sm font-medium text-avocado bg-green-50 px-4 py-1 rounded-full">OUR FORMULAS</span>
+                <h2 class="title-font text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Premium Wellness Solutions</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Each product is crafted with care using the finest natural ingredients for optimal results.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Natural supplements" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 text-avocado text-xs font-bold px-3 py-1 rounded-full">NEW</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="title-font text-xl font-semibold text-gray-800 mb-2">Vital Energy Complex</h3>
+                        <p class="text-gray-600 text-sm mb-4">Supports natural energy production and reduces fatigue.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-avocado font-bold">$39.99</span>
+                            <button class="text-xs bg-avocado hover:bg-green-700 text-white font-medium py-2 px-4 rounded-full transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar blocks for other products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="title-font text-3xl md:text-4xl font-semibold text-avocado mb-6">A return to what matters</h2>
+                <p class="text-xl text-gray-700">We believe in a life with more clarity, lightness, and vitality. No magic formulas, no empty promises. Just science, nature, and integrity in everything we do. Here, you'll find more than supplements, you'll find a path back to what matters most: caring for yourself with presence, respect, and awareness.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <h2>Rooted in Nature, Guided by Science</h2>
-                <h3>Your Journey to Wellness Starts Here</h3>
-                <p>Puraly Vital is more than supplements—it’s a commitment to helping you thrive naturally. Our formulas combine time-tested ingredients with rigorous science to support your energy, mobility, and hearing. Let’s rediscover what it means to feel truly alive.</p>
-                <a href="https://puralyvital.com/about" class="btn">
-                    Learn About Our Mission
-                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <p class="copyright">© 2025 Puraly Vital. All rights reserved.</p>
+    <footer class="bg-white/10 backdrop-blur-sm text-white py-12 border-t border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="title-font text-2xl font-semibold mb-4">Purely Vital</h3>
+                    <p class="mb-4">Natural wellness solutions rooted in science.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-babyblue transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-babyblue transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-babyblue transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+                    <div>
+                        <h4 class="title-font text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-babyblue transition">Home</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Products</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Blog</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="title-font text-lg font-semibold mb-4">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-babyblue transition">FAQ</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Shipping</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Returns</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="title-font text-lg font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-babyblue transition">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Disclaimer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-green-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Purely Vital. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
-                header.style.padding = '15px 0';
-            } else {
-                header.style.boxShadow = 'none';
-                header.style.padding = '20px 0';
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purely Vital - Natural Wellness Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .article-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .bg-avocado {
+            background-color: #568203;
+        }
+        .text-avocado {
+            color: #568203;
+        }
+        .bg-babyblue {
+            background-color: #B0E0E6;
+        }
+        .text-babyblue {
+            color: #B0E0E6;
+        }
+    </style>
+</head>
+<body class="bg-[#f8f8f8]">
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="title-font text-3xl md:text-4xl font-semibold text-avocado">Purely Vital</h1>
+                    <span class="ml-2 text-xs bg-avocado text-white px-2 py-1 rounded-full">NATURAL</span>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#" class="hover:text-babyblue transition">Home</a></li>
+                        <li><a href="#" class="hover:text-babyblue transition">Articles</a></li>
+                        <li><a href="#" class="hover:text-babyblue transition">Products</a></li>
+                        <li><a href="#" class="hover:text-babyblue transition">About</a></li>
+                    </ul>
+                </nav>
+                <button class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-r from-green-50 to-blue-50 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center mix-blend-multiply"></div>
+        </div>
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-2xl mx-auto text-center">
+                <span class="inline-block mb-4 text-sm font-medium text-avocado bg-white/80 px-4 py-1 rounded-full">100% NATURAL INGREDIENTS</span>
+                <h2 class="title-font text-4xl md:text-5xl font-semibold text-gray-800 mb-6 leading-tight">Natural Wellness <span class="text-avocado">Real Results</span></h2>
+                <p class="text-lg text-gray-600 mb-8">Our scientifically-formulated supplements combine nature's wisdom with modern research to support your health journey. Experience the difference of premium ingredients carefully selected for purity and potency.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="inline-block bg-avocado hover:bg-green-700 text-white font-medium py-3 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl">Shop Now</a>
+                    <a href="#" class="inline-block border-2 border-avocado text-avocado hover:bg-avocado hover:text-white font-medium py-3 px-8 rounded-full transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Article 1 -->
+            <div class="article-card bg-white rounded-xl shadow-xl overflow-hidden mb-12 relative group">
+                <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="md:flex relative">
+                    <div class="md:w-1/3 relative">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tired woman resting" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-avocado to-babyblue"></div>
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 rounded-full bg-avocado mr-2"></div>
+                            <span class="uppercase tracking-wide text-xs text-avocado font-semibold">Energy & Vitality</span>
+                        </div>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4 leading-snug">When fatigue won't go away</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">Discover why your energy drains and how a natural approach can help you regain balance and vitality over time.</h4>
+                        <p class="text-gray-600 mb-4">You know that feeling of waking up tired, as if the night's sleep wasn't enough? Or when the day has barely started and you already feel drained — no energy for workouts, work, or even the small daily tasks? This is more common than it seems, especially after 30 or when life gets more challenging.</p>
+                        <p class="text-gray-600 mb-6">These symptoms are often related to hormonal imbalances, slow circulation, chronic stress, or mild inflammation that builds up over time. Some natural ingredients have been studied for their potential to gently promote energy, balance, and well-being.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 Want to know what's worked for others? Take a closer look</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/3">
+                        <img src="https://images.pexels.com/photos/11349880/pexels-photo-11349880.jpeg?_gl=1*16456uv*_ga*MTY3MjgzMDY3MS4xNzUzOTgzNjg5*_ga_8JE65Q40S6*czE3NTQzMzc2ODQkbzkkZzEkdDE3NTQzMzgzNjYkajQ3JGwwJGgw" alt="Senior woman holding her knee" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-avocado font-semibold mb-1">Joint Health</div>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Joint pain?</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">Suffering with joint discomfort? See how to find relief naturally</h4>
+                        <p class="text-gray-600 mb-4">If you suffer from joint pain and stiffness, you know how frustrating it can feel to be limited in your daily activities. Whether it's climbing stairs, walking, or even getting out of bed, joint discomfort can make simple tasks daunting.</p>
+                        <p class="text-gray-600 mb-6">To relieve joint discomfort, focus on reducing inflammation, promoting cartilage health, and improving flexibility. Here are key ingredients that can help, supported by their natural properties.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 Discover Feilaira's Natural Joint Support Formula</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="https://images.pexels.com/photos/7792840/pexels-photo-7792840.jpeg?_gl=1*1t1al54*_ga*MTY3MjgzMDY3MS4xNzUzOTgzNjg5*_ga_8JE65Q40S6*czE3NTQzMzc2ODQkbzkkZzEkdDE3NTQzMzkyNDkkajMxJGwwJGgw" alt="Woman touching her ear" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-avocado font-semibold mb-1">Hearing Health</div>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Your ears deserve the best</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">How to care for your hearing naturally before it's too late</h4>
+                        <p class="text-gray-600 mb-4">Let's be honest: hearing problems catch us by surprise. One day, you're asking people to repeat themselves more often. The next, you're avoiding social events because conversations have become exhausting.</p>
+                        <p class="text-gray-600 mb-6">There are scientifically-backed natural ingredients that contribute to ear and brain health when used consistently. After years of researching natural solutions for hearing support, I discovered a formula that brings together many of the best-studied ingredients in this area.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 Learn more about Audifort here, if you're interested</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="article-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Man holding his knee in pain" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-avocado font-semibold mb-1">Joint Support</div>
+                        <h3 class="title-font text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Joint pain?</h3>
+                        <h4 class="text-xl text-gray-600 mb-6">Hidden causes and natural solutions that really work</h4>
+                        <p class="text-gray-600 mb-4">Waking up with stiff joints, feeling pain when walking, or discomfort when climbing stairs might seem like a normal part of aging, but these are signs your body is asking for support.</p>
+                        <p class="text-gray-600 mb-6">Fortunately, certain natural compounds have been studied for their ability to promote joint health. The good news is there are already natural supplements that safely and balancedly combine all these ingredients, offering a smarter, gentler approach to joint discomfort.</p>
+                        <a href="#" class="inline-flex items-center text-avocado hover:text-green-700 font-medium transition">
+                            <span>🔗 See what's helped others with similar symptoms</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="inline-block mb-4 text-sm font-medium text-avocado bg-green-50 px-4 py-1 rounded-full">OUR FORMULAS</span>
+                <h2 class="title-font text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Premium Wellness Solutions</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Each product is crafted with care using the finest natural ingredients for optimal results.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Natural supplements" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 text-avocado text-xs font-bold px-3 py-1 rounded-full">NEW</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="title-font text-xl font-semibold text-gray-800 mb-2">Vital Energy Complex</h3>
+                        <p class="text-gray-600 text-sm mb-4">Supports natural energy production and reduces fatigue.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-avocado font-bold">$39.99</span>
+                            <button class="text-xs bg-avocado hover:bg-green-700 text-white font-medium py-2 px-4 rounded-full transition duration-300">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar blocks for other products -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="title-font text-3xl md:text-4xl font-semibold text-avocado mb-6">A return to what matters</h2>
+                <p class="text-xl text-gray-700">We believe in a life with more clarity, lightness, and vitality. No magic formulas, no empty promises. Just science, nature, and integrity in everything we do. Here, you'll find more than supplements, you'll find a path back to what matters most: caring for yourself with presence, respect, and awareness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white/10 backdrop-blur-sm text-white py-12 border-t border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="title-font text-2xl font-semibold mb-4">Purely Vital</h3>
+                    <p class="mb-4">Natural wellness solutions rooted in science.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-babyblue transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-babyblue transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-babyblue transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+                    <div>
+                        <h4 class="title-font text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-babyblue transition">Home</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Products</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Blog</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="title-font text-lg font-semibold mb-4">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-babyblue transition">FAQ</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Shipping</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Returns</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="title-font text-lg font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-babyblue transition">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-babyblue transition">Disclaimer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-green-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Purely Vital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
