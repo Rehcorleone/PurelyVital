@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                        url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -36,6 +36,26 @@
         .section-divider {
             height: 80px;
             background: linear-gradient(to bottom, #f8fafc, rgba(248, 250, 252, 0));
+        }
+        .fatigue-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://purelyvitall.carrd.co/assets/images/image08.jpg?v=c078d912');
+            background-size: cover;
+            background-position: center;
+        }
+        .joints-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://purelyvitall.carrd.co/assets/images/image04.jpg?v=c078d912');
+            background-size: cover;
+            background-position: center;
+        }
+        .hearing-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://purelyvitall.carrd.co/assets/images/image03.jpg?v=c078d912');
+            background-size: cover;
+            background-position: center;
+        }
+        .joint-pain-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://purelyvitall.carrd.co/assets/images/image02.jpg?v=c078d912');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -73,7 +93,7 @@
         </div>
     </header>
 
-    <!-- New Hero Section -->
+    <!-- New Hero Section with Light Natural Background -->
     <section class="hero-bg text-white py-20 md:py-32 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');"></div>
         <div class="container mx-auto px-6 relative z-10">
@@ -104,8 +124,8 @@
                     <div class="relative">
                         <div class="absolute -z-10 -top-6 -left-6 w-32 h-32 bg-green-100 rounded-full opacity-70"></div>
                         <div class="relative overflow-hidden rounded-xl shadow-2xl border-4 border-white">
-                            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                                 alt="Natural Wellness" 
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" 
+                                 alt="Natural Foods" 
                                  class="w-full h-auto object-cover">
                         </div>
                     </div>
@@ -117,19 +137,26 @@
     <!-- Section Divider -->
     <div class="section-divider"></div>
 
-    <!-- Fatigue Section -->
-    <section id="fatigue" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <div class="inline-block bg-green-100 text-green-800 text-sm font-medium px-6 py-2 rounded-full mb-4">
-                    ENERGY SOLUTIONS
+    <!-- Fatigue Section with Original Background -->
+    <section id="fatigue" class="fatigue-bg text-white py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+                    <span class="text-green-300 font-medium">ENERGY SOLUTIONS</span>
                 </div>
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">When Fatigue Won't Go Away</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Find out why your energy feels drained. And how a natural approach could help you regain balance and vitality over time.
-                </p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">When Fatigue Won't Go Away</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">Find out why your energy feels drained. And how a natural approach could help you regain balance and vitality over time.</p>
+                <a href="https://heroichustle.com/b/order-now.php?aff_id=8843" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    Discover Natural Energy Solutions
+                </a>
             </div>
+        </div>
+    </section>
 
+    <!-- Fatigue Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <p class="text-lg text-gray-700 mb-8 leading-relaxed">
                     You know that feeling when you wake up already tired, like the night's rest just wasn't enough? Or when the day has barely started and you feel like you're running on empty — no energy for your workout, your work, or even the small everyday things?
@@ -139,7 +166,7 @@
                 </p>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">What could be behind it?</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">What could be behind it?</h2>
                     <p class="text-gray-700">
                         Over time, internal changes — often subtle — begin to affect how we feel. Some of the most common signs include:
                     </p>
@@ -192,7 +219,7 @@
                 </p>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">What might help?</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">What might help?</h2>
                     <p class="text-gray-700">
                         Some natural ingredients have been studied for their potential to gently support energy, balance, and well-being:
                     </p>
@@ -241,19 +268,26 @@
     <!-- Section Divider -->
     <div class="section-divider"></div>
 
-    <!-- Joints Section -->
-    <section id="joints" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <div class="inline-block bg-green-100 text-green-800 text-sm font-medium px-6 py-2 rounded-full mb-4">
-                    JOINT HEALTH
+    <!-- Joints Section with Original Background -->
+    <section id="joints" class="joints-bg text-white py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+                    <span class="text-green-300 font-medium">JOINT HEALTH</span>
                 </div>
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Achy Joints?</h2>
-                <h3 class="text-2xl text-gray-600 max-w-3xl mx-auto">
-                    Struggling with Joint Discomfort? Here's How to Find Relief Naturally
-                </h3>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Achy Joints?</h1>
+                <h2 class="text-3xl mb-8">Struggling with Joint Discomfort? Here's How to Find Relief Naturally</h2>
+                <a href="https://bg.feilaira.com/?aff_id=4775" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    Discover Joint Support Solutions
+                </a>
             </div>
+        </div>
+    </section>
 
+    <!-- Joints Content -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <p class="text-lg text-gray-700 mb-8 leading-relaxed">
                     If you're dealing with stiff, achy joints, you know how frustrating it can be to feel limited in your daily activities. Whether it's climbing stairs, enjoying a walk, or even getting out of bed, joint discomfort can make simple tasks feel daunting.
@@ -263,7 +297,7 @@
                 </p>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Actionable Solutions for Joint Relief</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Actionable Solutions for Joint Relief</h2>
                     <p class="text-gray-700">
                         To ease joint discomfort, focus on reducing inflammation, supporting cartilage health, and improving flexibility. Here are key ingredients that can help, backed by their natural properties:
                     </p>
@@ -306,7 +340,7 @@
                 </p>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Alternative Ways to Support Joint Health</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Alternative Ways to Support Joint Health</h2>
                     <p class="text-gray-700">
                         If you prefer a non-supplement approach, you can still benefit from these ingredients through diet and habits:
                     </p>
@@ -335,7 +369,7 @@
                 </div>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">A Natural Option to Consider</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">A Natural Option to Consider</h2>
                     <p class="text-gray-700">
                         For those looking for a convenient way to get these benefits, I've heard great things about Feilaira. It's an all-natural supplement that combines Boswellia, MSM, Turmeric, Glucosamine, and more to target inflammation and support joint mobility.
                     </p>
@@ -357,19 +391,26 @@
     <!-- Section Divider -->
     <div class="section-divider"></div>
 
-    <!-- Hearing Section -->
-    <section id="hearing" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <div class="inline-block bg-green-100 text-green-800 text-sm font-medium px-6 py-2 rounded-full mb-4">
-                    HEARING HEALTH
+    <!-- Hearing Section with Original Background -->
+    <section id="hearing" class="hearing-bg text-white py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+                    <span class="text-green-300 font-medium">HEARING HEALTH</span>
                 </div>
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Your ears deserve the best</h2>
-                <h3 class="text-2xl text-gray-600 max-w-3xl mx-auto">
-                    How to Naturally Support Your Hearing Before It's Too Late
-                </h3>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Your ears deserve the best</h1>
+                <h2 class="text-3xl mb-8">How to Naturally Support Your Hearing Before It's Too Late</h2>
+                <a href="https://www.audisoothe.com/b/order-now.php?aff_id=5607" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    Learn About Hearing Support
+                </a>
             </div>
+        </div>
+    </section>
 
+    <!-- Hearing Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <p class="text-lg text-gray-700 mb-8 leading-relaxed">
                     Let's be honest: hearing issues sneak up on us.
@@ -382,7 +423,7 @@
                 </p>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Natural Steps to Help Safeguard Your Hearing</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Natural Steps to Help Safeguard Your Hearing</h2>
                     <p class="text-gray-700">
                         You don't need invasive treatments or bulky devices to start protecting your ears today. There are natural, science-backed ingredients that support both ear and brain health when used consistently.
                     </p>
@@ -421,7 +462,7 @@
                 </div>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Can You Find These Nutrients Outside of Supplements?</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Can You Find These Nutrients Outside of Supplements?</h2>
                     <p class="text-gray-700">
                         Absolutely. A diet high in antioxidants (like berries, green tea, and leafy greens), combined with regular exercise to improve circulation, can go a long way.
                     </p>
@@ -435,7 +476,7 @@
                 </p>
                 
                 <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-12">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">What I Recommend as a Specialist (and Why It Stands Out)</h3>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">What I Recommend as a Specialist (and Why It Stands Out)</h2>
                     <p class="text-gray-700">
                         After years researching natural solutions for hearing support, I came across a formula that brings together many of the most well-studied ingredients in this field.
                     </p>
@@ -463,19 +504,26 @@
     <!-- Section Divider -->
     <div class="section-divider"></div>
 
-    <!-- Joint Pain Section -->
-    <section id="joint-pain" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <div class="inline-block bg-green-100 text-green-800 text-sm font-medium px-6 py-2 rounded-full mb-4">
-                    JOINT WELLNESS
+    <!-- Joint Pain Section with Original Background -->
+    <section id="joint-pain" class="joint-pain-bg text-white py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-6">
+                    <span class="text-green-300 font-medium">JOINT WELLNESS</span>
                 </div>
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Joint pain?</h2>
-                <h3 class="text-2xl text-gray-600 max-w-3xl mx-auto">
-                    Hidden causes and natural solutions that actually work
-                </h3>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Joint pain?</h1>
+                <h2 class="text-3xl mb-8">Hidden causes and natural solutions that actually work</h2>
+                <a href="https://jointgenesis.net/tsl-cb/?aff_id=85959" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                    Explore Joint Pain Solutions
+                </a>
             </div>
+        </div>
+    </section>
 
+    <!-- Joint Pain Content -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <p class="text-lg text-gray-700 mb-8 leading-relaxed">
                     Waking up with stiff joints, feeling pain when walking, or discomfort when climbing stairs might seem like a normal part of aging — but these are signs your body is asking for support.
